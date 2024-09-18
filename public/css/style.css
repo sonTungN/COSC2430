@@ -1,0 +1,174 @@
+/* GLOBAL */
+:root {
+  --favorite-color: #0E6EFD;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+input:disabled + label {
+  cursor: not-allowed;
+  color: #ccc;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* INDEX */
+main.profile-container {
+  display: flex;
+}
+
+/* INDEX - ASIDE */
+aside#profile {
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+  padding: 20px;
+  background: var(--favorite-color);
+  font-size: 16px;
+  color: #fff;
+}
+
+aside#profile .profileImg {
+  align-self: center;
+  border-radius: 50%;
+}
+
+aside#profile .profile-information .profile-intro .name {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+aside#profile .profile-information .profile-detail .SID,
+aside#profile .profile-information .profile-detail .email {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* INDEX - SECTION */
+section#meal-plan {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 33.3%);
+  padding-left: 20px;
+}
+
+section#meal-plan .meal-plan-heading,
+section#meal-plan .btn-cta {
+  align-self: flex-end;
+}
+
+section#meal-plan .btn-cta button#btn-refresh {
+  min-width: 120px;
+  background: var(--favorite-color);
+}
+
+section#meal-plan #meal-list {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+}
+
+section#meal-plan #meal-list .meal {
+  width: 50%;
+}
+
+section#meal-plan #meal-list .meal:first-child {
+  width: 100%;
+}
+
+section#meal-plan #meal-list .meal .mealImg {
+  width: 100%;
+}
+
+section#meal-plan #meal-list .meal .mea-info .meal-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* MEAL */
+main.meal-detail-container {
+  display: flex;
+  flex-direction: column;
+}
+
+main.meal-detail-container .meal-detail {
+  font-size: 16px;
+}
+
+main.meal-detail-container .meal-detail .mealDetailImg {
+  width: 100%;
+}
+
+main.meal-detail-container .meal-detail .meal-detail-info .meal-detail-name {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+main.meal-detail-container .btn-cta {
+  align-self: center;
+}
+
+main.meal-detail-container button#btn-back {
+  min-width: 120px;
+  background: var(--favorite-color);
+}
+
+@media (max-width: 991px) {
+  header {
+    flex-direction: column;
+  }
+
+  /* INDEX */
+  main.profile-container {
+    flex-direction: column;
+  }
+
+  /* INDEX - ASIDE */
+  aside#profile {
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  aside#profile .profile-information .profile-intro span,
+  aside#profile .profile-information .profile-intro .name,
+  aside#profile .profile-information .profile-detail .SID,
+  aside#profile .profile-information .profile-detail .email {
+    display: block;
+    text-align: center;
+  }
+
+  /* INDEX - SECTION */
+  section#meal-plan {
+    width: 100%;
+  }
+
+  section#meal-plan .meal-plan-heading,
+  section#meal-plan .btn-cta {
+    align-self: center;
+  }
+
+  section#meal-plan #meal-list .meal {
+    width: 100%;
+  }
+
+  section#meal-plan #meal-list .meal .mealImg {
+    height: 150px; !important;
+  }
+}

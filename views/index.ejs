@@ -1,0 +1,49 @@
+<%- include("partials/header.ejs") %>
+    <header>
+      <!-- Your header starts here -->
+      <img src="/images/logo.png" alt="Logo Image" width="64px" height="64px" class="logoImg">
+      <div class="breadcrumb-group">
+        <a href="/" class="breadcrumb-link">Home Page</a>
+      </div>
+    </header>
+
+    <main class="profile-container">
+      <!-- Your page code starts here -->
+      <aside id="profile">
+        <img src="/images/profile.png" alt="Profile Image" height="250px" class="profileImg">
+
+        <div class="profile-information">
+          <div class="profile-intro">
+            <span>Hi, I'm</span>
+            <h1 class="name">Nguyen Son Tung</h1>
+          </div>
+
+          <div class="profile-detail">
+            <h2 class="SID">s3979348</h2>
+            <h2 class="email">s3979348@rmit.edu.vn</h2>
+          </div>
+        </div>
+      </aside>
+
+      <section id="meal-plan">
+        <h1 class="meal-plan-heading">My <strong>DAILY MEAL PLAN</strong></h1>
+        <form action="/refresh" method="POST" class="btn-cta">
+          <button id="btn-refresh">Refresh</button>
+        </form>
+
+        <div id="meal-list">
+          <% meals.forEach((meal) => { %>
+            <div class="meal">
+              <a href="meal?name=<%= encodeURIComponent(meal.name) %>">
+                <img src="<%= meal.imageUrl %>" alt="<%= meal.name %>" height="300px" class="mealImg">
+                <section class="meal-info">
+                  <h3 class="meal-name"><%= meal.name %></h3>
+                  <span><%= meal.timeOfDay %> - <%= meal.mealType %></span>
+                </section>
+              </a>
+            </div>
+          <% }) %>
+        </div>
+      </section>
+    </main>
+<%- include("partials/footer.ejs") %>

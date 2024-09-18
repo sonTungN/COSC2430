@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+    <header>
+      <!-- Your header starts here -->
+      <img src="/images/logo.png" alt="Logo Image" width="64px" height="64px" class="logoImg">
+      <div class="breadcrumb-group">
+        <a href="/" class="breadcrumb-link">Home Page</a>
+        <span>→</span>
+        <a href="/meal?name=<%= encodeURIComponent(currentMeal.name) %>" class="breadcrumb-link">Banh Mi</a>
+      </div>
+    </header>
+
+    <main class="meal-detail-container">
+      <div class="meal-detail">
+        <img src="<%= currentMeal.imageUrl %>" alt="<%= currentMeal.name %>" height="450px" class="mealDetailImg">
+        <section class="meal-detail-info">
+          <h1 class="meal-detail-name"><%= currentMeal.name %></h1>
+          <span><%= currentMeal.timeOfDay %> - <%= currentMeal.mealType %></span>
+        </section>
+      </div>
+        <form action="/" method="GET" class="btn-cta">
+            <button id="btn-back">Back</button>
+        </form>
+    </main>
+
+<%- include("partials/footer.ejs") %>
